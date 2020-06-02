@@ -7,7 +7,15 @@ extern int yylval;
 
 %%
 
-START {yylval=atoi(yytext);return START;}
+HEY {yylval=atoi(yytext);return HEY;}
+
+ROBOT {yylval=atoi(yytext);return ROBOT;}
+
+PLEASE {yylval=atoi(yytext);return PLEASE;}
+
+MOVE {yylval=atoi(yytext);return MOVE;}
+
+TO {yylval=atoi(yytext);return TO;}
 
 STOP {yylval=atoi(yytext);return STOP;}
 
@@ -18,8 +26,6 @@ WEST {yylval=atoi(yytext);return WEST;}
 NORTH {yylval=atoi(yytext);return NORTH;}
 
 SOUTH {yylval=atoi(yytext);return SOUTH;}
-
-"***"[^\n]*     /* eat up one-line comments */
 
 [ \t\n]+    ;
 
